@@ -26,11 +26,12 @@ burger.addEventListener('click', (e) => {
   if (e.target.classList.contains('burger--active')) {
     menu.classList.add('open');
     overlay.classList.add('open');
+    lockScroll();
   } else {
     menu.classList.remove('open');
     overlay.classList.remove('open');
+    unlockScroll();
   }
-  lockScroll();
   initialMenu();
 });
 

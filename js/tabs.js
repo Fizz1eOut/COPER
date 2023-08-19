@@ -1,28 +1,20 @@
-/* eslint-disable */
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.catalog__tabs');
-  const tabsBtn = document.querySelectorAll('.tabs__btn');
-  const tabsContent = document.querySelectorAll('.tabs__content');
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('tabs__btn')) {
+      const catalog = e.target.closest('.catalog__tabs');
+      const { tabsPath } = e.target.dataset;
 
-  const tabsHandler = (path) => {
-    tabsBtn.forEach((el) => {
-      el.classList.remove('tabs__btn--active');
-      document.querySelector(`[data-tabs-path="${path}"]`).classList.add('tabs__btn--active');
-    });
+      const btns = catalog.querySelectorAll('.tabs__btn');
+      btns.forEach((el) => {
+        el.classList.remove('tabs__btn--active');
+      });
+      e.target.classList.add('tabs__btn--active');
 
-    tabsContent.forEach((el) => {
-      el.classList.remove('tabs__content--active');
-      document.querySelector(`[data-tabs-target="${path}"]`).classList.add('tabs__content--active');
-    });
-  };
-
-  tabs.forEach((el) => {
-    el.addEventListener('click', (e) => {
-      if (e.target.classList.contains('tabs__btn')) {
-        const { tabsPath } = e.target.dataset;
-        tabsHandler(tabsPath);
-        
-      }
-    });
+      const content = catalog.querySelectorAll('.tabs__content');
+      content.forEach((el) => {
+        el.classList.remove('tabs__content--active');
+      });
+      catalog.querySelector(`[data-tabs-target="${tabsPath}"]`).classList.add('tabs__content--active');
+    }
   });
 });
