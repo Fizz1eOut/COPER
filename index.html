@@ -713,12 +713,12 @@
             <button class="modal__button button-off"></button>
           </div>
 
-          <form action="#" class="modal__form form-modal">
+          <form action="#" class="modal__form form-modal" id="form" name="form">
             <div class="form-modal__items">
               <div class="form-modal__item">
                 <h3 class="form-modal__title">Електронна адреса</h3>
 
-                <input class="form-modal__input" type="email" placeholder="Ваш email">
+                <input class="form-modal__input" type="email" placeholder="Ваш email" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
                 <label class="form-modal__label" for="#"></label>
               </div>
 
@@ -730,7 +730,7 @@
               </div>
 
               <div class="form-modal__buttons">
-                <button class="button--orange button" type="button">Увійти</button>
+                <button class="button--orange button" type="submit" id="button" name="button">Увійти</button>
                 <button class="form-modal__button modal-btn" data-path="me-popup">Зареєструватись</button>
               </div>
             </div>
@@ -744,26 +744,19 @@
             <button class="modal__button button-off"></button>
           </div>
 
-          <form class="modal__form form-modal">
+          <form action="#" class="modal__form form-modal" id="form" name="form">
             <div class="form-modal__items">
               <div class="form-modal__item">
-                <h3 class="form-modal__title">Ваше імя</h3>
+                <h3 class="form-modal__title">Ваше імя та Прізвище</h3>
 
-                <input class="form-modal__input" type="text" placeholder="Ім'я">
-                <label class="form-modal__label" for="#"></label>
-              </div>
-
-              <div class="form-modal__item">
-                <h3 class="form-modal__title">Ваше прізвище</h3>
-
-                <input class="form-modal__input" type="text" placeholder="Прізвище">
+                <input class="form-modal__input" type="text" placeholder="Ім'я та Прізвище" id="name" name="name" data-reg="^[а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+$">
                 <label class="form-modal__label" for="#"></label>
               </div>
 
               <div class="form-modal__item">
                 <h3 class="form-modal__title">Електронна адреса</h3>
 
-                <input class="form-modal__input" type="email" placeholder="Ваш email">
+                <input class="form-modal__input" placeholder="Ваш email" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
                 <label class="form-modal__label" for="#"></label>
               </div>
 
@@ -775,7 +768,7 @@
               </div>
 
               <div class="form-modal__buttons">
-                <button class="button--orange button" type="button">Увійти</button>
+                <button class="button--orange button" type="submit" id="button" name="button">Підтвердити</button>
                 <button class="form-modal__button modal-btn" data-path="form-popup">Увійти</button>
               </div>
             </div>
@@ -820,7 +813,7 @@
             <div class="order__item">
               <h3 class="order__text">Імя та Прізвище</h3>
               <label class="order__label">
-                <input type="text" name="Имя" class="order__input" placeholder="Ваше Імя та Прізвище" id="name" name="name" data-reg="^[а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+$">
+                <input type="text" class="order__input" placeholder="Ваше Імя та Прізвище" id="name" name="name" data-reg="^[а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+$">
               </label>  
             </div>
             
