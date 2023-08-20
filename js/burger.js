@@ -15,6 +15,7 @@ const scrollTop = () => {
     behavior: 'smooth',
   });
 };
+
 const initialMenu = () => {
   document.querySelector('.nav__list--dropdown').classList.remove('transformation');
   document.querySelector('.nav').querySelector('.nav__list').classList.remove('transformation');
