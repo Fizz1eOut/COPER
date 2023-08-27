@@ -730,7 +730,7 @@
 	width: 1207px;
 	padding: 20px 40px 30px 40px;
 	overflow: auto;
-	height: 800px;
+	height: 840px;
 }
 .card-modal__row {
 	display: flex;
@@ -909,6 +909,9 @@
 }
 
 @media (max-width: 499px) {
+	.products__title {
+		font-size: 20px;
+	}
 	.cart-product {
 		flex-wrap: wrap;
 	}

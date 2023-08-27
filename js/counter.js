@@ -31,6 +31,10 @@ document.addEventListener('click', (e) => {
 
   // Проверяем является ли элемент по которому был совершен клик кнопкой Минус
   if (e.target.dataset.action === 'minus') {
-    counter.innerText = --counter.innerText;
+    // Проверяем чтобы счетчик был больше 1
+    if (parseInt(counter.innerText) > 1) {
+    // Изменяем текст в счетчике уменьшая его на 1
+      counter.innerText = --counter.innerText;
+    }
   }
 });

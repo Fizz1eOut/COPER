@@ -1,13 +1,15 @@
 /* eslint-disable */
-const productsBtn = document.querySelectorAll('.product__btn');
+document.addEventListener('DOMContentLoaded', () => {
+  const productsBtn = document.querySelectorAll('.product__btn');
 const cardProductsList = document.querySelector('.cart-content__list');
 const cardQuantity = document.querySelector('.cart__quantity');
 const fullPrice = document.querySelector('.fullprice');
 let price= 0;
+let randomId = 0;
 
-const randomId = () => {
-	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-};
+// const randomId = () => {
+// 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+// };
 
 const priceWithoutSpaces = (str) => {
 	return str.replace(/\s/g, '');
@@ -90,11 +92,12 @@ const deleteProducts = (productParent) => {
 	productParent.remove();
 
 	printQuantity();
+  updateStorage();
 }
 
 // проходим по всем кнопкам
 productsBtn.forEach((el) => {
-  el.closest('.product').setAttribute('data-id', randomId()); // находим родителя карт товара и задаем ему рандомнный id
+  el.closest('.product').setAttribute('data-id', randomId++); // находим родителя карт товара и задаем ему рандомнный id
   el.addEventListener('click', (e) => {
     let self = e.target;
     let parent = self.closest('.product'); // находим текущий продукт
@@ -112,6 +115,8 @@ productsBtn.forEach((el) => {
     cardProductsList.insertAdjacentHTML('afterbegin', generateCartProduct(img, title, priceString, id));
     // считаем и выводим кол-во эл в корзине
     printQuantity();
+    // добавление в LS
+    updateStorage();
     // disabled btn
     self.disabled = true;
   });
@@ -121,4 +126,39 @@ cardProductsList.addEventListener('click', (e) => {
 	if (e.target.classList.contains('cart-product__delete')) {
 		deleteProducts(e.target.closest('.cart-content__item'));
 	}
+});
+
+const countSumm = () => {
+  document.querySelectorAll('.cart-content__item').forEach((el) => {
+    price += parseInt(priceWithoutSpaces(el.querySelector('.cart-product__price').textContent));
+  });
+};
+
+const initialState = () => {
+  if (localStorage.getItem('products') !== null) {
+    cardProductsList.innerHTML = localStorage.getItem('products');
+    printQuantity();
+    countSumm();
+    printFullPrice();
+
+    document.querySelectorAll('.cart-content__product').forEach(el => {
+      let id = el.dataset.id;
+      console.log(id)
+      document.querySelector(`.product[data-id="${id}"]`).querySelector('.product__btn').disabled = true;
+    });
+  }
+}
+initialState();
+// добавление в LS
+const updateStorage = () => {
+  let parent = cardProductsList;
+  let html = parent.innerHTML;
+  html = html.trim();
+  // console.log(html);
+  if (html.length) {
+    localStorage.setItem('products', html);
+  } else {
+    localStorage.removeItem('products');
+  }
+}
 });
