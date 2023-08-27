@@ -6,6 +6,7 @@ const buttonOff = document.querySelectorAll('.button-off')
 
 modalBtns.forEach((el) => {
   el.addEventListener('click', (e) => {
+    lockScroll();
     const path = e.target.getAttribute('data-path'); // находим атрибуты
 
     modals.forEach((modal) => {
@@ -19,6 +20,7 @@ modalBtns.forEach((el) => {
 
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) {
+    unlockScroll();
     modalOverlay.classList.remove('modal-overlay--visible');
     modals.forEach((el) => {
       el.classList.remove('modal--visible');
@@ -27,6 +29,7 @@ modalOverlay.addEventListener('click', (e) => {
 });
 buttonOff.forEach((el) => {
   el.addEventListener('click', (e) => {
+    unlockScroll();
     modalOverlay.classList.remove('modal-overlay--visible');
       modals.forEach((el) => {
         el.classList.remove('modal--visible');

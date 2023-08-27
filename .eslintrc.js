@@ -23,5 +23,8 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'max-len': ['error', { code: 140 }],
+    // eslint-disable-next-line quote-props
+    'radix': 'off',
+    'no-plusplus': 'off',
   },
 };

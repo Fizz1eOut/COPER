@@ -11,7 +11,7 @@ formArr.forEach((el) => {
     validFormArr.push(el);
   }
 });
-console.log(formArr);
+//console.log(formArr);
 
 
 // что-то делаем при вводе
