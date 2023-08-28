@@ -143,7 +143,7 @@ const initialState = () => {
 
     document.querySelectorAll('.cart-content__product').forEach(el => {
       let id = el.dataset.id;
-      console.log(id)
+      // console.log(id)
       document.querySelector(`.product[data-id="${id}"]`).querySelector('.product__btn').disabled = true;
     });
   }

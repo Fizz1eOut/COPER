@@ -909,9 +909,6 @@
 }
 
 @media (max-width: 499px) {
-	.products__title {
-		font-size: 20px;
-	}
 	.cart-product {
 		flex-wrap: wrap;
 	}
@@ -1044,6 +1041,9 @@
 } */
 
 @media (max-width: 768px) {
+	.products__title {
+		font-size: 20px;
+	}
 	.card-modal {
 		padding: 30px 20px;
 	}

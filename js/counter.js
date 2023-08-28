@@ -1,19 +1,33 @@
 // Добавляем прослушку на всем окне
 document.addEventListener('click', (e) => {
   // const calcCounter = () => {
-  //   // const cartProduct = document.querySelectorAll('.cart-content__product');
+  //   const cartProduct = document.querySelector('.cart-content__product');
+  //   const priceElements = cartProduct.querySelectorAll('.cart-product__price');
+  //   const fullPrice = document.querySelector('.fullprice');
   //   // let priceTotal = 0;
 
   //   // cartProduct.forEach(() => {
   //   //   const cardCounter = document.querySelector('[data-counter]');
-  //   //   const cardPrice = document.querySelector('.cart-product__fullprice');
+  //   //   const cardPrice = document.querySelector('.cart-product__price');
 
   //   //   const currentPrice = parseInt(cardCounter.innerText) * parseInt(cardPrice.innerText);
   //   //   // console.log(currentPrice);
   //   //   priceTotal += currentPrice;
   //   // });
-  //   // console.log(priceTotal);
+
+  //   let priceTotal = 0;
+
+  //   // Обходим все блоки с ценами в корзине
+  //   priceElements.forEach((el) => {
+  //     // Находим количество товара
+  //     const amountEl = el.closest('.cart-content__product').querySelector('[data-counter]');
+  //     // Добавляем стоимость товара в общую стоимость (кол-во * цену)
+  //     priceTotal += parseInt(el.innerText) * parseInt(amountEl.innerText);
+  //   });
+  //   fullPrice.innerText = priceTotal;
+  //   console.log(priceTotal);
   // };
+
   // Объявляем переменную для счетчика
   let counter;
   // Проверяем клик строго по кнопкам Плюс либо Минус
@@ -23,7 +37,6 @@ document.addEventListener('click', (e) => {
     // Находим див с числом счетчика
     counter = counterWrapper.querySelector('[data-counter]');
   }
-
   // Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
   if (e.target.dataset.action === 'plus') {
     counter.innerText = ++counter.innerText;
