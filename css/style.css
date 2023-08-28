@@ -1046,6 +1046,7 @@
 	}
 	.card-modal {
 		padding: 30px 20px;
+		height: 100%;
 	}
 	.cart-content__bottom {
 		align-items: flex-end;
