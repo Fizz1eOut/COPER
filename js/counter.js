@@ -1,33 +1,33 @@
 // Добавляем прослушку на всем окне
 document.addEventListener('click', (e) => {
-  // const calcCounter = () => {
-  //   const cartProduct = document.querySelector('.cart-content__product');
-  //   const priceElements = cartProduct.querySelectorAll('.cart-product__price');
-  //   const fullPrice = document.querySelector('.fullprice');
-  //   // let priceTotal = 0;
+  const fullPrice = document.querySelector('.fullprice');
+  let totalPrice = 0;
 
-  //   // cartProduct.forEach(() => {
-  //   //   const cardCounter = document.querySelector('[data-counter]');
-  //   //   const cardPrice = document.querySelector('.cart-product__price');
+  const priceWithoutSpaces = (str) => {
+    return str.replace(/\s/g, '');
+  };
+  const normalPrice = (str) => {
+    return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+  };
 
-  //   //   const currentPrice = parseInt(cardCounter.innerText) * parseInt(cardPrice.innerText);
-  //   //   // console.log(currentPrice);
-  //   //   priceTotal += currentPrice;
-  //   // });
-
-  //   let priceTotal = 0;
-
-  //   // Обходим все блоки с ценами в корзине
-  //   priceElements.forEach((el) => {
-  //     // Находим количество товара
-  //     const amountEl = el.closest('.cart-content__product').querySelector('[data-counter]');
-  //     // Добавляем стоимость товара в общую стоимость (кол-во * цену)
-  //     priceTotal += parseInt(el.innerText) * parseInt(amountEl.innerText);
-  //   });
-  //   fullPrice.innerText = priceTotal;
-  //   console.log(priceTotal);
-  // };
-
+  const calcCounter = () => {
+    const cartContentItem = document.querySelectorAll('.cart-content__item');
+    // console.log(cartContentItem);
+    cartContentItem.forEach((el) => {
+      // console.log(el);
+      const cartCounter = el.querySelector('[data-counter]');
+      // console.log(cartCounter);
+      // const cartProductPriceString = el.querySelector('.cart-product__price').textContent;
+      // console.log(cartProductPriceString);
+      const cartProductPriceNumber = parseInt(priceWithoutSpaces(el.querySelector('.cart-product__price').textContent));
+      // console.log(cartProductPriceNumber);
+      const currentPrice = parseInt(cartCounter.innerText) * parseInt(cartProductPriceNumber);
+      // console.log(currentPrice);
+      totalPrice += currentPrice;
+      // console.log(totalPrice);
+      fullPrice.textContent = `${normalPrice(totalPrice)} ₴`;
+    });
+  };
   // Объявляем переменную для счетчика
   let counter;
   // Проверяем клик строго по кнопкам Плюс либо Минус
@@ -36,10 +36,12 @@ document.addEventListener('click', (e) => {
     const counterWrapper = e.target.closest('.cart-product__wrapper');
     // Находим див с числом счетчика
     counter = counterWrapper.querySelector('[data-counter]');
+    // console.log(counter);
   }
   // Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
   if (e.target.dataset.action === 'plus') {
     counter.innerText = ++counter.innerText;
+    calcCounter();
   }
 
   // Проверяем является ли элемент по которому был совершен клик кнопкой Минус
@@ -48,6 +50,7 @@ document.addEventListener('click', (e) => {
     if (parseInt(counter.innerText) > 1) {
     // Изменяем текст в счетчике уменьшая его на 1
       counter.innerText = --counter.innerText;
+      calcCounter();
     }
   }
 });

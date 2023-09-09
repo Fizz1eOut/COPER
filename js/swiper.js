@@ -1,8 +1,8 @@
 /* eslint-disable */
-new Swiper('.product-swiper', {
+new Swiper('.new-products', {
   navigation: {
-    nextEl: '.product__arrow.swiper-button-next',
-    prevEl: '.product__arrow.swiper-button-prev',
+    nextEl: '.new-products__arrow.swiper-button-next',
+    prevEl: '.new-products__arrow.swiper-button-prev',
   },
   // Управление клавиатурой
   keyboard: {
@@ -22,14 +22,14 @@ new Swiper('.product-swiper', {
     320: {
       slidesPerView: 1,
     },
-    610: {
-      slidesPerView: 1,
-    },
-    870: {
+    320: {
       slidesPerView: 3,
     },
-    1128: {
+    1058: {
       slidesPerView: 4,
+    },
+    1317: {
+      slidesPerView: 5,
     },
   },
 

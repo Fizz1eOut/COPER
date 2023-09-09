@@ -26,5 +26,6 @@ module.exports = {
     // eslint-disable-next-line quote-props
     'radix': 'off',
     'no-plusplus': 'off',
+    'arrow-body-style': 'off',
   },
 };

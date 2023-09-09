@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const cardProductsList = document.querySelector('.cart-content__list');
 const cardQuantity = document.querySelector('.cart__quantity');
 const fullPrice = document.querySelector('.fullprice');
-let price= 0;
+let price = 0;
 let randomId = 0;
 
 // const randomId = () => {
