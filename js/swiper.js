@@ -4,6 +4,11 @@ new Swiper('.new-products', {
     nextEl: '.new-products__arrow.swiper-button-next',
     prevEl: '.new-products__arrow.swiper-button-prev',
   },
+
+  pagination: {
+    el: '.new-products__swiper-pagination.swiper-pagination',
+    clickable: true
+  },
   // Управление клавиатурой
   keyboard: {
     // включить/выключить
@@ -22,7 +27,10 @@ new Swiper('.new-products', {
     320: {
       slidesPerView: 1,
     },
-    320: {
+    460: {
+      slidesPerView: 2,
+    },
+    675: {
       slidesPerView: 3,
     },
     1058: {
