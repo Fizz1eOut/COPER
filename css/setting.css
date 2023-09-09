@@ -110,7 +110,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 .button--blue:hover {
-  background-color: #27305B;
+  background-color: #3A4681;
   cursor: pointer;
 }
   /* button--buy */
