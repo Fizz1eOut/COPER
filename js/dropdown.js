@@ -17,11 +17,5 @@ radio.forEach((el) => {
     if (e.target.checked) {
       radioDropdown.forEach((el) => el.classList.toggle('radio-dropdown__input-visible', e.checked));
     };
-
-    // if (e.target.checked) {
-    //   radioDropdown.forEach((el) => el.classList.add('radio-dropdown__input-visible'));
-    // } else {
-    //   radioDropdown.forEach((el) => el.classList.remove('radio-dropdown__input-visible'));
-    // }
   });
 });
