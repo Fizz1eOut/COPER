@@ -1,9 +1,11 @@
 /* eslint-disable */
 document.addEventListener('DOMContentLoaded', () => {
-  const productsBtn = document.querySelectorAll('.product__btn');
+const productsBtn = document.querySelectorAll('.product__btn');
 const cardProductsList = document.querySelector('.cart-content__list');
 const cardQuantity = document.querySelector('.cart__quantity');
 const fullPrice = document.querySelector('.fullprice');
+const ordersProductsList = document.querySelector('.orders__list');
+const cartContentLink = document.querySelector('.cart-content__link');
 let price = 0;
 let randomId = 0;
 
@@ -127,6 +129,64 @@ cardProductsList.addEventListener('click', (e) => {
 		deleteProducts(e.target.closest('.cart-content__item'));
 	}
 });
+
+// разметка элемента добавленого в корзину
+const generateOrdersProduct = (img, title, price, id) => {
+  return `
+  <li class="orders__item">
+    <article class="orders__product orders-product" data-id="${id}">
+      <img src="${img}" alt="Зображення товару" class="orders-product__img">
+        <div class="orders-product__row">
+          <div class="orders-product__text">Назва товару</div>
+          <h3 class="orders-product__title">${title}</h3>
+        </div>
+
+        <div class="orders-product__row">
+          <div class="orders-product__text orders-product__text-mg">Кількість</div>
+          <div class="cart-product__wrapper">
+            <div class="cart-product__control" data-action="minus">-</div>
+              <div class="cart-product__current" data-counter>1</div>
+            <div class="cart-product__control" data-action="plus">+</div>
+      </div>
+        </div>
+
+        <div class="orders-product__row">
+          <div class="orders-product__text">Ціна за одиницю</div>
+          <span class="orders-product__price">${normalPrice(price)}</span>
+        </div>
+
+      <button class="orders-product__delete" aria-label="Удалить товар"></button>
+    </article>
+  </li>
+  `;
+};
+
+// cartContentLink.addEventListener('click', () => {
+//   let array = cardProductsList.children;
+//   let fullprice = fullPrice.textContent;
+//   document.querySelector('.orders-content__fullprice span').textContent = `${fullprice}`;
+//   for (item of array);
+//   console.log(item);
+//       let img = item.querySelector('.cart-product__img').getAttribute('src');
+//       let title = item.querySelector('.cart-product__title').textContent;
+//       let priceString = priceWithoutSpaces(item.querySelector('.cart-product__price').textContent);
+//       let id = item.querySelector('.cart-product').dataset.id;
+
+//       ordersProductsList.insertAdjacentHTML('afterbegin', generateOrdersProduct(img, title, priceString, id));
+// });
+
+// cartContentLink.addEventListener('click', () => {
+//     let item = cardProductsList;
+//     console.log(item)
+//     let fullprice = fullPrice.textContent;
+//     document.querySelector('.orders-content__fullprice span').textContent = `${fullprice}`;
+//         let img = item.querySelector('.cart-product__img').getAttribute('src');
+//         let title = item.querySelector('.cart-product__title').textContent;
+//         let priceString = priceWithoutSpaces(item.querySelector('.cart-product__price').textContent);
+//         let id = item.querySelector('.cart-product').dataset.id;
+  
+//         ordersProductsList.insertAdjacentHTML('afterbegin', generateOrdersProduct(img, title, priceString, id));
+//   });
 
 const countSumm = () => {
   document.querySelectorAll('.cart-content__item').forEach((el) => {

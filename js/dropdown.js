@@ -6,3 +6,22 @@ catalog.forEach((el) => {
     dropdown.forEach((el) => el.classList.toggle('dropdown--active'));
   })
 });
+
+const radio = document.querySelectorAll('.radio-dropdown');
+console.log(radio);
+const radioDropdown = document.querySelectorAll('.radio-dropdown__input');
+console.log(radioDropdown);
+
+radio.forEach((el) => {
+  el.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      radioDropdown.forEach((el) => el.classList.toggle('radio-dropdown__input-visible', e.checked));
+    };
+
+    // if (e.target.checked) {
+    //   radioDropdown.forEach((el) => el.classList.add('radio-dropdown__input-visible'));
+    // } else {
+    //   radioDropdown.forEach((el) => el.classList.remove('radio-dropdown__input-visible'));
+    // }
+  });
+});
