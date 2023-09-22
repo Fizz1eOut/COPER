@@ -100,7 +100,12 @@ productsBtn.forEach((el) => {
     // считаем и выводим кол-во эл в корзине
     printQuantity();
     // добавление в LS
+
+    // вызов первой функции
     updateStorage();
+    // вызов второй функции
+    // updateStorage(id);
+
     // disabled btn
     self.disabled = true;
   });
@@ -198,39 +203,57 @@ const generateOrdersProduct = (img, title, price, id) => {
 //         ordersProductsList.insertAdjacentHTML('afterbegin', generateOrdersProduct(img, title, priceString, id));
 //   });
 
-const initialState = () => {
-  if (localStorage.getItem('products') !== null) {
-    cardProductsList.innerHTML = localStorage.getItem('products');
-    printQuantity();
-    updatePrice();
-
-    document.querySelectorAll('.cart-content__product').forEach(el => {
-      let id = el.dataset.id;
-      // console.log(id)
-      document.querySelector(`.product[data-id="${id}"]`).querySelector('.product__btn').disabled = true;
-    });
-  }
-}
-initialState();
-// добавление в LS
-const updateStorage = () => {
-  let parent = cardProductsList;
-  let html = parent.innerHTML;
-  html = html.trim();
-  // console.log(html);
-  if (html.length) {
-    localStorage.setItem('products', html);
-  } else {
-    localStorage.removeItem('products');
-  }
-}
-
 // const initialState = () => {
+//   if (localStorage.getItem('products') !== null) {
+//     cardProductsList.innerHTML = localStorage.getItem('products');
+//     printQuantity();
+//     updatePrice();
 
-// };
-
+//     document.querySelectorAll('.cart-content__product').forEach(el => {
+//       let id = el.dataset.id;
+//       // console.log(id)
+//       document.querySelector(`.product[data-id="${id}"]`).querySelector('.product__btn').disabled = true;
+//     });
+//   }
+// }
+// initialState();
+// // добавление в LS
 // const updateStorage = () => {
 //   let parent = cardProductsList;
-//   console.log(parent);
+//   let html = parent.innerHTML;
+//   html = html.trim();
+//   // console.log(html);
+//   if (html.length) {
+//     localStorage.setItem('products', html);
+//   } else {
+//     localStorage.removeItem('products');
+//   }
 // }
+const initialState = () => {
+
+};
+
+// первая попытка добавления
+const updateStorage = () => {
+  let parent = cardProductsList.querySelector('.cart-product')
+  let id = parent.dataset.id;
+  console.log(id)
+  if (id.length) {
+    localStorage.setItem('cart', id);
+  } else {
+    localStorage.removeItem('cart');
+  }
+}
+
+// вторая попытка добавления
+// const updateStorage = (id) => {
+//   let parent = cardProductsList.querySelector(`.cart-product[data-id="${id}"]`);
+//   console.log(parent);
+//   if (id.length) {
+//     localStorage.setItem('cart', id);
+//   } else {
+//     localStorage.removeItem('cart');
+//   }
+// }
+
 });
