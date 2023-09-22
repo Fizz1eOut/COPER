@@ -9,34 +9,23 @@ const cartContentLink = document.querySelector('.cart-content__link');
 let price = 0;
 let randomId = 0;
 
-// const randomId = () => {
-// 	return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-// };
-
-const priceWithoutSpaces = (str) => {
-	return str.replace(/\s/g, '');
+const getPrice = (str) => {
+  return +str.replace(/\D+/g, '');
 };
 
 const normalPrice = (str) => {
-	return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+  return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 };
-
-// принимает текущую цену товара
-const plusFullPrice = (currentPrice) => {
-	return price += currentPrice;
-  
+const updatePrice = () => {
+  const products = document.querySelectorAll('.cart-product');
+  const totalCost = [...products].reduce((acc, product) => {
+    const productPrice = getPrice(product.querySelector('.cart-product__price').textContent);
+    const productCount = +product.querySelector('.cart-product__current').textContent;
+    const productCost = productPrice * productCount;
+    return acc + productCost;
+  }, 0);
+  fullPrice.textContent = `${normalPrice(totalCost)} ₴`;
 };
-
-// отнимает при удалении товара 
-const minusFullPrice = (currentPrice) => {
-	return price -= currentPrice;
-};
-
- // вывести полную цену
-const printFullPrice = () => {
- fullPrice.textContent = `${normalPrice(price)} ₴`;
-}
-
 // считаем и выводим кол-во
 const printQuantity = () => {
   let productLength = cardProductsList.children.length;
@@ -87,12 +76,8 @@ const deleteProducts = (productParent) => {
   // получаем id
   let id = productParent.querySelector('.cart-product').dataset.id;
   document.querySelector(`.product[data-id='${id}']`).querySelector('.product__btn').disabled = false;
-  // пересчитать сумму корзины
-  let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.cart-product__price').textContent));
-	minusFullPrice(currentPrice);
-	printFullPrice();
 	productParent.remove();
-
+  updatePrice();
 	printQuantity();
   updateStorage();
 }
@@ -106,15 +91,12 @@ productsBtn.forEach((el) => {
     let id = parent.dataset.id; // получаем id
     let img = parent.querySelector('.product__image img').getAttribute('src'); // картинка товара
     let title = parent.querySelector('.product__title').textContent; // title товара
-    let priceString = priceWithoutSpaces(parent.querySelector('.product-price__current').textContent);
-    let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.product-price__current').textContent)); // цена товара
+    let priceString = getPrice(parent.querySelector('.product-price__current').textContent);
+    // let priceNumber = getPrice(parent.querySelector('.product-price__current').textContent); // цена товара
     // console.log(priceNumber);
-    // считаем цену
-    plusFullPrice(priceNumber);
-    // вывести полную цену
-    printFullPrice();
     // добавить в корзину
     cardProductsList.insertAdjacentHTML('afterbegin', generateCartProduct(img, title, priceString, id));
+    updatePrice();
     // считаем и выводим кол-во эл в корзине
     printQuantity();
     // добавление в LS
@@ -130,7 +112,35 @@ cardProductsList.addEventListener('click', (e) => {
 	}
 });
 
-// разметка элемента добавленого в корзину
+document.addEventListener('click', (e) => {
+  // Объявляем переменную для счетчика
+  let counter;
+  // Проверяем клик строго по кнопкам Плюс либо Минус
+  if (e.target.dataset.action === 'plus' || e.target.dataset.action === 'minus') {
+    // Находим обертку счетчика
+    const counterWrapper = e.target.closest('.cart-product__wrapper');
+    // Находим див с числом счетчика
+    counter = counterWrapper.querySelector('[data-counter]');
+    // console.log(counter);
+  }
+  // Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
+  if (e.target.dataset.action === 'plus') {
+    counter.innerText = ++counter.innerText;
+    updatePrice();
+  }
+
+  // Проверяем является ли элемент по которому был совершен клик кнопкой Минус
+  if (e.target.dataset.action === 'minus') {
+    // Проверяем чтобы счетчик был больше 1
+    if (parseInt(counter.innerText) > 1) {
+    // Изменяем текст в счетчике уменьшая его на 1
+      counter.innerText = --counter.innerText;
+      updatePrice();
+    }
+  }
+});
+
+
 const generateOrdersProduct = (img, title, price, id) => {
   return `
   <li class="orders__item">
@@ -169,7 +179,7 @@ const generateOrdersProduct = (img, title, price, id) => {
 //   console.log(item);
 //       let img = item.querySelector('.cart-product__img').getAttribute('src');
 //       let title = item.querySelector('.cart-product__title').textContent;
-//       let priceString = priceWithoutSpaces(item.querySelector('.cart-product__price').textContent);
+//       let priceString = getPrice(item.querySelector('.cart-product__price').textContent);
 //       let id = item.querySelector('.cart-product').dataset.id;
 
 //       ordersProductsList.insertAdjacentHTML('afterbegin', generateOrdersProduct(img, title, priceString, id));
@@ -182,24 +192,17 @@ const generateOrdersProduct = (img, title, price, id) => {
 //     document.querySelector('.orders-content__fullprice span').textContent = `${fullprice}`;
 //         let img = item.querySelector('.cart-product__img').getAttribute('src');
 //         let title = item.querySelector('.cart-product__title').textContent;
-//         let priceString = priceWithoutSpaces(item.querySelector('.cart-product__price').textContent);
+//         let priceString = getPrice(item.querySelector('.cart-product__price').textContent);
 //         let id = item.querySelector('.cart-product').dataset.id;
   
 //         ordersProductsList.insertAdjacentHTML('afterbegin', generateOrdersProduct(img, title, priceString, id));
 //   });
 
-const countSumm = () => {
-  document.querySelectorAll('.cart-content__item').forEach((el) => {
-    price += parseInt(priceWithoutSpaces(el.querySelector('.cart-product__price').textContent));
-  });
-};
-
 const initialState = () => {
   if (localStorage.getItem('products') !== null) {
     cardProductsList.innerHTML = localStorage.getItem('products');
     printQuantity();
-    countSumm();
-    printFullPrice();
+    updatePrice();
 
     document.querySelectorAll('.cart-content__product').forEach(el => {
       let id = el.dataset.id;
@@ -221,4 +224,13 @@ const updateStorage = () => {
     localStorage.removeItem('products');
   }
 }
+
+// const initialState = () => {
+
+// };
+
+// const updateStorage = () => {
+//   let parent = cardProductsList;
+//   console.log(parent);
+// }
 });

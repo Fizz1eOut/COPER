@@ -120,9 +120,9 @@
           <span class="burger__line"></span>
         </button>
 
-        <a href="#" class="header__logo">
+        <a href="./index.html" class="header__logo">
           <img class="nav__logo-1" src="./img/header/logo.png" alt="логотип">
-              <img class="nav__logo-2" src="./img/header/logo sign 2.png" alt="логотип">
+          <img class="nav__logo-2" src="./img/header/logo sign 2.png" alt="логотип">
         </a>
 
         <div class="header__catalog catalog">
@@ -318,9 +318,12 @@
           </div>
 
           <div class="header__icon liked">
-            <div class="liked__icon">
-              <img src="./img/header/heart.svg" alt="иконка понравившигося товара">
-            </div>
+            <span class="liked__quantity">0</span>
+              <div class="liked__icon">
+                <a href="./selected-products.html">
+                  <img src="./img/header/heart.svg" alt="иконка понравившигося товара">
+                </a>
+              </div>
           </div>
 
           <div class="header__cart cart" tabindex="0">
@@ -342,7 +345,10 @@
         <h2 class="orders__title title">Оформлення замовлення</h2>
         <form action="#" class="orders__body">
           <div class="orders__items">
-            <ul class="orders__list">
+            <ul class="cart-content__list">
+
+						</ul>
+            <!-- <ul class="orders__list">
               <li class="orders__item">
                 <article class="orders__product orders-product">
                   <img src="./img/product/product.png" alt="Зображення товару" class="orders-product__img">
@@ -368,7 +374,7 @@
                   <button class="orders-product__delete" aria-label="Удалить товар"></button>
                 </article>
               </li> 
-            </ul>
+            </ul> -->
 
             <div class="orders__form form-order">
               <div class="form-order__group">
@@ -482,10 +488,6 @@
           </div>
           </div>
           </div>
-
-          <!-- <ul class="cart-content__list">
-
-          </ul> -->
 
           <div class="orders-content">
             <h2 class="orders-content__title">Разом</h2>
@@ -653,7 +655,7 @@
               <div class="form-modal__item">
                 <h3 class="form-modal__title">Електронна адреса</h3>
 
-                <input class="form-modal__input" placeholder="Ваш email" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+                <input class="form-modal__input" placeholder="Ваш email" id="email" name="email" data-reg="">
                 <label class="form-modal__label" for="#"></label>
               </div>
 
@@ -832,6 +834,6 @@
 <script src="./js/dropdown.js"></script>
 <script src="./js/tabs.js"></script>
 <script src="./js/cart.js"></script>
-<script src="./js/counter.js"></script>
+<script src="./js/favorites.js"></script>
 <script src="./js/validation.js"></script>
 </html>

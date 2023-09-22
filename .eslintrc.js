@@ -27,5 +27,6 @@ module.exports = {
     'radix': 'off',
     'no-plusplus': 'off',
     'arrow-body-style': 'off',
+    'prefer-const': 'off',
   },
 };

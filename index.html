@@ -119,7 +119,7 @@
           <span class="burger__line"></span>
         </button>
 
-        <a href="#" class="header__logo">
+        <a href="./index.html" class="header__logo">
           <img class="nav__logo-1" src="./img/header/logo.png" alt="логотип">
               <img class="nav__logo-2" src="./img/header/logo sign 2.png" alt="логотип">
         </a>
@@ -317,8 +317,11 @@
           </div>
 
           <div class="header__icon liked">
+            <span class="liked__quantity">0</span>
             <div class="liked__icon">
-              <img src="./img/header/heart.svg" alt="иконка понравившигося товара">
+              <a href="./selected-products.html">
+                <img src="./img/header/heart.svg" alt="иконка понравившигося товара">
+              </a>
             </div>
           </div>
 
@@ -1343,7 +1346,7 @@
               <div class="form-modal__item">
                 <h3 class="form-modal__title">Електронна адреса</h3>
 
-                <input class="form-modal__input" placeholder="Ваш email" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+                <input class="form-modal__input" type="email" placeholder="Ваш email" id="email" name="email" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
                 <label class="form-modal__label" for="#"></label>
               </div>
 
@@ -1524,6 +1527,6 @@
 <script src="./js/dropdown.js"></script>
 <script src="./js/tabs.js"></script>
 <script src="./js/cart.js"></script>
-<script src="./js/counter.js"></script>
+<script src="./js/favorites.js"></script>
 <script src="./js/validation.js"></script>
 </html>

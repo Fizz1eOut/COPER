@@ -1,9 +1,12 @@
 /* eslint-disable */
-const form = document.forms['form']; // считываем форму
-const formArr = Array.from(form); // формируем массив из элементов формы
+const form = document.forms; // считываем форму
+// console.log(form)
+const allForms = [...form];
+// console.log(allForms)
+const formArr = Array.from(allForms); // формируем массив из элементов формы
 // console.log(formArr)
 const validFormArr = []; // в этом массиве хранятся поля, которые нужно проверить
-const button = form.elements["button"]; // считываем кнопку
+//const button = form.elements["button"]; // считываем кнопку
 formArr.forEach((el) => {
   // проверка на валидность
   if (el.hasAttribute('data-reg')) {
@@ -15,8 +18,11 @@ formArr.forEach((el) => {
 
 
 // что-то делаем при вводе
-form.addEventListener('input', inputHandler);
-button.addEventListener("click", buttonHandler);
+allForms.forEach((el) => {
+el.addEventListener('input', inputHandler);
+});
+// button.addEventListener("click", buttonHandler);
+
 // поле вода по которому был клик
 function inputHandler({ target }) {
   if (target.hasAttribute("data-reg")) {

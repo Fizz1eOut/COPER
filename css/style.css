@@ -921,8 +921,9 @@
 .product__liked {
 	cursor: pointer;
 }
-.product__liked:disabled  {
+.product__liked:disabled {
 	opacity: 0.6;
+	pointer-events: none;
 }
 /* products */
 .products {
