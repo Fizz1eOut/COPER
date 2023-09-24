@@ -921,9 +921,8 @@
 .product__liked {
 	cursor: pointer;
 }
-.product__liked:disabled {
-	opacity: 0.6;
-	pointer-events: none;
+.product__liked.active svg {
+	fill: red;
 }
 /* products */
 .products {
