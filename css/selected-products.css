@@ -1,0 +1,14 @@
+.selected-products__title {
+  margin: 30px 0;
+}
+.title {
+}
+.selected__favorites {
+}
+.favorites-list {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 10px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}

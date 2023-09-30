@@ -28,5 +28,6 @@ module.exports = {
     'no-plusplus': 'off',
     'arrow-body-style': 'off',
     'prefer-const': 'off',
+    'consistent-return': 'off',
   },
 };
