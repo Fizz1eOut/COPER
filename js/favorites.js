@@ -50,13 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const favoritesRaw = localStorage.getItem('favorites');
       const favorites = JSON.parse(favoritesRaw);
-
       return Array.isArray(favorites) ? favorites : [];
     } catch {
       console.warn('error while getting favorites from LS');
       return [];
     }
   };
+
+  const updateLikeButtons = () => {
+    const products = document.querySelectorAll('.product');
+    console.log(products);
+    const favorites = getFavorites();
+    console.log(favorites);
+    const result = [...products].filter((el) => {
+      const { id } = el.dataset;
+      console.log(id);
+      return favorites.some((favorite) => favorite.id === id);
+    });
+    result.forEach((el) => {
+      el.querySelector('.product__liked').classList.add('active');
+    });
+    console.log(result);
+  };
+
+  updateLikeButtons();
 
   const printQuantity = () => {
     const quantity = getFavorites();
@@ -112,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     load.forEach((el) => {
       addProduct(el);
     });
+    // console.log(load);
   };
   loadFavorites(getFavorites());
 
