@@ -1033,7 +1033,7 @@
 	color: #848484;
 	text-decoration: line-through;
 }
-.product__btn:disabled {
+.product__btn.active {
 	opacity: 0.4;
 	pointer-events: none;
 }
