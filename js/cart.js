@@ -27,20 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     fullPrice.textContent = `${normalPrice(totalCost)} ₴`;
   };
 
-  // // считаем и выводим кол-во
-  // const printQuantity = () => {
-  //   let productLength = cardProductsList.children.length;
-  //   cardQuantity.textContent = productLength;
-  //   // console.log(cardProductsList)
-  //   // console.log(length)
-  //   const empty = document.querySelector('.cart-content__empty');
-  //   if (productLength > 0) {
-  //     empty.style.display = 'none';
-  //   } else {
-  //     empty.style.display = 'block';
-  //   }
-  // };
-
   document.addEventListener('click', (e) => {
     // Объявляем переменную для счетчика
     let counter;
@@ -112,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return [];
     }
   };
-
+  console.log(getProducts());
   const updateLikeButtons = () => {
     const products = document.querySelectorAll('.product');
     // console.log(products);

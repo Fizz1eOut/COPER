@@ -29,5 +29,6 @@ module.exports = {
     'arrow-body-style': 'off',
     'prefer-const': 'off',
     'consistent-return': 'off',
+    'import/extensions': 'off',
   },
 };

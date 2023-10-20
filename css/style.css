@@ -1,5 +1,9 @@
 /* header */
 .header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
   background-color: var(--color-dark-blue);
 }
 .header__items {
@@ -321,7 +325,7 @@
 		padding: 11px 20px;
 	}
 	.header__items {
-		padding: 0;
+		padding: 15px 0;
 	}
 	.nav__logo-1 {
 		display: none;
@@ -377,10 +381,6 @@
 
 	.mobile-back {
 		display: block;
-	}
-
-	.header {
-		padding: 15px 0;
 	}
 
 	.nav {
@@ -637,7 +637,7 @@
 
 /* get-started */
 .get-started {
-	margin-top: 15px;
+	padding-top: 112px;
 }
 .get-started__body .catalog {
 	display: none;

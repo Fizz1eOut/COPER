@@ -16,326 +16,9 @@
   <div class="overlay"></div>
   <header class="header">
     <div class="header__container container">
-      <nav class="header__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <div class="nav__logo">
-              <img src="./img/burger/logo2.png" alt="логотип">
-            </div>
-          </li>
-
-          <li class="nav__item">
-            <div class="nav__user user-nav">
-              <img src="./img/burger/Union.svg" alt="иконка человечка">
-              <button class="user-nav__login modal-btn" data-path="form-popup">Вхід</button>
-              <button class="user-nav__registration modal-btn" data-path="me-popup">Реєстрація</button>
-            </div>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link nav__link--drop">Каталог товарів</a>
-            <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu">
-              <div class="nav__logo">
-                <img src="./img/burger/logo2.png" alt="логотип">
-              </div>
-							<li class="dropdown-list__item mobile-back"><a href="#" class="dropdown-list__link mobile-back__link">Назад</a></li>
-							<li class="dropdown-submenu__item">
-								<ul class="dropdown-submenu__list">
-                  <li class="dropdown-submenu__list-item"><a href="#">Масла і змазки</a></li>
-									<li class="dropdown-submenu__list-item"><a href="#">Автокосметика та автохімія</a></li>
-									<li class="dropdown-submenu__list-item"><a href="#">Автоелектроніка</a></li>
-                  <li class="dropdown-submenu__list-item"><a href="#">Автоаксесуари</a></li>
-                  <li class="dropdown-submenu__list-item"><a href="#">Інструменти та обладнання</a></li>
-								</ul>
-							</li>
-						</ul>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link">Акції</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link">Бонусна программа</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link nav__link--drop">Контакти</a>
-            <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu">
-              <div class="nav__logo">
-                <img src="./img/burger/logo2.png" alt="логотип">
-              </div>
-							<li class="dropdown-list__item mobile-back"><a href="#" class="dropdown-list__link mobile-back__link">Назад</a></li>
-							<li class="dropdown-submenu__item">
-								<ul class="dropdown-submenu__list">
-                  <li class="dropdown-submenu__list-item"><a href="#">( 050 )  316 94 52</a></li>
-									<li class="dropdown-submenu__list-item"><a href="#">( 063 )  448 22 97</a></li>
-									<li class="dropdown-submenu__list-item"><a href="#">( 097 )  213 21 53</a></li>
-									<li class="dropdown-submenu__list-icons dropdown-icon">
-                    <ul class="dropdown-icon__list">
-                      <li class="dropdown-icon__item">
-                        <a href="#" class="dropdown-icon__link"><img src="./img/header/viber.svg" alt="Иконка вайбера"></a>
-                      </li>
-                      <li class="dropdown-icon__item">
-                        <a href="#" class="dropdown-icon__link"><img src="./img/header/telegram.svg" alt="Иконка телеграмма"></a>
-                      </li>
-                    </ul>
-                  </li>
-								</ul>
-							</li>
-						</ul>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link nav__link--drop">Покупцю</a>
-            <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu">
-              <div class="nav__logo">
-                <img src="./img/burger/logo2.png" alt="логотип">
-              </div>
-							<li class="dropdown-list__item mobile-back"><a href="#" class="dropdown-list__link mobile-back__link">Назад</a></li>
-							<li class="dropdown-submenu__item">
-								<ul class="dropdown-submenu__list">
-									<li class="dropdown-submenu__list-item"><a href="">Доставка</a></li>
-									<li class="dropdown-submenu__list-item"><a href="">Оплата</a></li>
-									<li class="dropdown-submenu__list-item"><a href="">Гарантії</a></li>
-									<li class="dropdown-submenu__list-item"><a href="">Про нас</a></li>
-									<li class="dropdown-submenu__list-item"><a href="">Повернення</a></li>
-                  <li class="dropdown-submenu__list-item"><a href="">Питання - відповідь</a></li>
-								</ul>
-							</li>
-						</ul>
-          </li>
-
-          <div class="header__translation">
-            <select class="change-lang">
-                <option value="ua" selected>UA</option>
-                <option value="ru">RU</option>
-            </select>
-        </div>
-        </ul>
-      </nav>
-
-      <div class="header__items">
-        <button class="burger" aria-label="Открыть меню">
-          <span class="burger__line"></span>
-        </button>
-
-        <a href="./index.html" class="header__logo">
-          <img class="nav__logo-1" src="./img/header/logo.png" alt="логотип">
-          <img class="nav__logo-2" src="./img/header/logo sign 2.png" alt="логотип">
-        </a>
-
-        <div class="header__catalog catalog">
-          <button class="button--catalog">Каталог</button> 
-            <div class="dropdown dropdown--wd">
-              <div class="catalog__tabs">
-                <ul class="tabs__list">
-                  <li class="tabs__item"><button class="tabs__btn tabs__btn--active" data-tabs-path="oils">Масла і змазки</button></li>
-                  <li class="tabs__item"><button class="tabs__btn" data-tabs-path="cosmetics">Автокосметика та автохімія</button></li>
-                  <li class="tabs__item"><button class="tabs__btn" data-tabs-path="electronics">Автоелектроніка</button></li>
-                  <li class="tabs__item"><button class="tabs__btn" data-tabs-path="accessories">Автоаксесуари</button></li>
-                  <li class="tabs__item"><button class="tabs__btn" data-tabs-path="tools">Інструменти та обладнання</button></li>
-                </ul>
-    
-                <div class="tabs__content tabs__content--active" data-tabs-target="oils">
-                  <ul class="catalog__list">
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Моторні масла для легкових автомобілів</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Моторні масла для грузових автомобілів</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Трансмісійні масла</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Масла для мототехніки, човнів та садової техніки (67)</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Гальмівні рідини</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Антифризи</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Змазки</a>
-                    </li>
-                  </ul>
-                </div>
-      
-                <div class="tabs__content" data-tabs-target="cosmetics">
-                  <ul class="catalog__list">
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автохімія для салона</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автохімія для скла</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автохімія для ризини та дисків</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Інвентар для догляду за автомобілем</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Присадки</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Герметика, клеї, фіксатори</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="tabs__content" data-tabs-target="electronics">
-                  <ul class="catalog__list">
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Електронні системи</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автосвітло</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Парковочні системи</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Аудіо та відео для авто</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Відеореєстратори</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автокомпресори та насоси</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Аккумулятори</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автопилесоси</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="tabs__content" data-tabs-target="accessories">
-                  <ul class="catalog__list">
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автошини</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автодиски</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Двірники кріплення та ризинки</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Тенти та чохли</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Мінімийки та аксесуари до мінімийок</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Ароматизатори</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Органайзери</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Техдопомога</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="tabs__content" data-tabs-target="tools">
-                  <ul class="catalog__list">
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Полірувальні машини та аксесуари</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Автодиски</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Інструменти</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Домкрати</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Шумовіброізоляції</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Клейкі стрічки</a>
-                    </li>
-
-                    <li class="catalog__item">
-                      <a href="#" class="catalog__link">Обладнання для СТО</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <form action="#" class="header__form header-form">
-          <div class="header-form__item">
-            <input type="search" class="header-form__input" placeholder="Пошук">
-            <label for="#" class="header-form__label"></label>
-          </div>
-            <button type="submit" class="header-form__button button--orange">Шукати</button>
-        </form>
-
-        <div class="header__icons">
-          <div class="header__user">
-            <img src="./img/header/user.svg" alt="иконка личного кабинета">
-          </div>
-
-          <div class="header__icon liked">
-            <span class="liked__quantity">0</span>
-              <div class="liked__icon">
-                <a href="./selected-products.html">
-                  <img src="./img/header/heart.svg" alt="иконка понравившигося товара">
-                </a>
-              </div>
-          </div>
-
-          <div class="header__cart cart" tabindex="0">
-              <span class="cart__quantity">0</span>
-              <button class="card__button modal-btn" data-path="pop-up">
-                
-              </button>
-
-          </div>
-
-        </div>
-      </div>
+      <a href="./index.html" class="header__logo">
+        <img class="header__logo-1" src="./img/header/logo.png" alt="логотип">
+      </a>
     </div>
   </header>
 
@@ -345,36 +28,9 @@
         <h2 class="orders__title title">Оформлення замовлення</h2>
         <form action="#" class="orders__body">
           <div class="orders__items">
-            <ul class="cart-content__list">
+            <ul class="order-content__list">
 
 						</ul>
-            <!-- <ul class="orders__list">
-              <li class="orders__item">
-                <article class="orders__product orders-product">
-                  <img src="./img/product/product.png" alt="Зображення товару" class="orders-product__img">
-                    <div class="orders-product__row">
-                      <div class="orders-product__text">Назва товару</div>
-                      <h3 class="orders-product__title">Моторна олія Aral BlueTronic 10W-40 1 л</h3>
-                    </div>
-    
-                    <div class="orders-product__row">
-                      <div class="orders-product__text orders-product__text-mg">Кількість</div>
-                      <div class="cart-product__wrapper">
-                        <div class="cart-product__control" data-action="minus">-</div>
-                          <div class="cart-product__current" data-counter>1</div>
-                        <div class="cart-product__control" data-action="plus">+</div>
-                  </div>
-                    </div>
-    
-                    <div class="orders-product__row">
-                      <div class="orders-product__text">Ціна за одиницю</div>
-                      <span class="orders-product__price">3 450 ₴</span>
-                    </div>
-    
-                  <button class="orders-product__delete" aria-label="Удалить товар"></button>
-                </article>
-              </li> 
-            </ul> -->
 
             <div class="orders__form form-order">
               <div class="form-order__group">
@@ -493,7 +149,7 @@
             <h2 class="orders-content__title">Разом</h2>
             <div class="orders-content__item">
               <div class="orders-content__sum-delivery">Вартість доставки: <span>100 ₴</span></div>
-              <div class="orders-content__fullprice">Загальна вартість: <span>0 ₴</span></div>
+              <div class="orders-content__fullprice">Загальна вартість: <span class="fullprice">0 ₴</span></div>
               <button class="orders-content__button button--orange" type="submit" id="button" name="button">Підтвердити замовлення</button>
             </div>
           </div>
@@ -829,11 +485,12 @@
 	</div>
 
 </body>
-<script src="./js/burger.js"></script>
+<!-- <script src="./js/burger.js"></script>
 <script src="./js/modals.js"></script>
 <script src="./js/dropdown.js"></script>
-<script src="./js/tabs.js"></script>
-<script src="./js/cart.js"></script>
-<script src="./js/favorites.js"></script>
-<script src="./js/validation.js"></script>
+<script src="./js/tabs.js"></script> -->
+<script src="./js/checkout.js"></script>
+<!-- <script src="./js/cart.js"></script> -->
+<!-- <script src="./js/favorites.js"></script>
+<script src="./js/validation.js"></script> -->
 </html>
