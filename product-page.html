@@ -337,6 +337,7 @@
         </div>
       </div>
     </div>
+
     <div class="header__directions directions">
       <div class="container">
         <ul class="directions__list">
@@ -344,15 +345,11 @@
   
           <li class="directions__item"><a href="#description" class="directions__link">Опис</a></li>
   
-          <li class="directions__item"><a href="" class="directions__link">Характеристики</a></li>
+          <li class="directions__item"><a href="#characteristics" class="directions__link">Характеристики</a></li>
   
-          <li class="directions__item"><a href="" class="directions__link">Відгуки</a></li>
+          <li class="directions__item"><a href="#reviews" class="directions__link">Відгуки</a></li>
   
-          <li class="directions__item"><a href="" class="directions__link">Питання</a></li>
-  
-          <li class="directions__item"><a href="" class="directions__link">Разом дешевше</a></li>
-          
-          <li class="directions__item"><a href="" class="directions__link">Аксесуари</a></li>
+          <li class="directions__item"><a href="#question" class="directions__link">Питання</a></li>
         </ul>
       </div>
     </div>
@@ -361,7 +358,7 @@
   <main class="main">
     <section class="about-product" id="product">
       <div class="container">
-        <div class="about-product__body">
+        <article class="product about-product__body">
           <div class="about-product__card card">
             <div class="card-slider">
                 <div class="card-slider__block slider-block">
@@ -442,11 +439,22 @@
               <h2>Є в наявності</h2>
             </div>
 
-            <h2 class="description-product__title title">Моторна олія Aral BlueTronic 10W-40 1л</h2>
+            <div class="about-product__row">
+              <h1 class="about-product__title product__title title">Моторне масло Aral BlueTronic 10W-40 1 л</h1>
+              <div class="product__props">
+                <span class="product__rating">
+                  <img src="./img/liked/star_rating.png" alt="">
+                </span>
+                <span class="product__testimonials">320 відгуків</span>
+              </div>
+              </div>
 
             <div class="description-product__price price-product">
-              <span class="price-product__text">Вартість товару:</span>
-              <span class="price-product__price">3 450 ₴</span>
+              <div class="price-product__content">
+                <span class="price-product__text">Вартість товару:</span>
+                <span class="price-product__price product-price__current">3 450 ₴</span>
+              </div>
+              <button class="product__btn button--buy">До кошика</button>
             </div>
 
             <div class="description-product__delivery delivery-product">
@@ -486,11 +494,11 @@
               <div class="guarantee-product__text">24 місяці Обмін/повернення товару впродовж 14 днів</div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="description">
+    <section class="description" id="description">
       <div class="container">
         <h2 class="description__title title">Опис товару</h2>
 
@@ -504,6 +512,334 @@
             Lectus est malesuada eleifend tempus. Lorem purus proin purus sed semper turpis. Pharetra tellus est pharetra tellus. Sit cursus et aliquet euismod eu sit massa. Adipiscing feugiat varius ullamcorper quisque facilisis in ut non. Ultrices integer etiam lectus convallis id. Egestas fames elit leo donec et integer faucibus faucibus scelerisque. Facilisis purus at porta etiam orci tellus. Aenean pretium pulvinar mauris enim tempus ipsum. Suspendisse nunc interdum elit a elit. Pretium sit sollicitudin in risus rhoncus sem vitae enim.
             At fermentum curabitur id faucibus in. Massa risus at purus nec mi. Risus montes congue dignissim ultrices nec sem risus elit in. Vulputate pellentesque gravida a nulla. Faucibus dictum nibh sit enim ac diam fames nunc dui. Faucibus proin ac accumsan gravida volutpat penatibus sed laoreet. Aliquam morbi maecenas est nibh amet. Odio neque et ac turpis consequat.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="characteristics" id="characteristics">
+      <div class="container">
+        <h2 class="characteristics__title title">Характеристики</h2>
+        <dl class="characteristics-chars chars">
+          <div class="chars__item">
+            <dt class="chars__term">Тип</dt>
+            <dd class="chars__val">Моторна олія</dd>
+          </div>
+          <div class="chars__item">
+            <dt class="chars__term">Застосування</dt>
+            <dd class="chars__val">Моторна олія</dd>
+          </div>
+          <div class="chars__item">
+            <dt class="chars__term">Колір</dt>
+            <dd class="chars__val">Синій</dd>
+          </div>
+          <div class="chars__item">
+            <dt class="chars__term">Обєм(мл.)</dt>
+            <dd class="chars__val">400</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    
+    <section class="user-reviews">
+      <div class="user-reviews__container container">
+        <div class="user-reviews__body">
+          <div class="user-reviews__reviews reviews" id="reviews">
+            <h2 class="user-reviews__title title">Відгуки</h2>
+  
+            <div class="reviews__items">
+              <div class="reviews__content">
+                <div class="reviews__row">
+                  <h3 class="reviews__fullname">Імя Прізвище</h3>
+  
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                </div>
+  
+                <div class="reviews__recommendations">Рекомендую цей товар ! Хороша якість !</div>
+  
+                <div class="reviews__item">
+                  <h4 class="reviews__title">Переваги</h4>
+                  <div class="reviews__text">Переваги у всьому</div>
+                </div>
+  
+                <div class="reviews__item">
+                  <h4 class="reviews__title">Недоліки</h4>
+                  <div class="reviews__text">Немає</div>
+                </div>
+  
+                <div class="reviews__date">12.06.2022</div>
+              </div>
+  
+              <div class="reviews__content">
+                <div class="reviews__row">
+                  <h3 class="reviews__fullname">Імя Прізвище</h3>
+  
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                </div>
+  
+                <div class="reviews__recommendations">Рекомендую цей товар ! Хороша якість !</div>
+  
+                <div class="reviews__item">
+                  <h4 class="reviews__title">Переваги</h4>
+                  <div class="reviews__text">Переваги у всьому</div>
+                </div>
+  
+                <div class="reviews__item">
+                  <h4 class="reviews__title">Недоліки</h4>
+                  <div class="reviews__text">Немає</div>
+                </div>
+  
+                <div class="reviews__date">28.06.2022</div>
+              </div>
+  
+              <div class="reviews__content">
+                <div class="reviews__row">
+                  <h3 class="reviews__fullname">Імя Прізвище</h3>
+  
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                </div>
+  
+                <div class="reviews__recommendations">Рекомендую цей товар ! Хороша якість !</div>
+  
+                <div class="reviews__item">
+                  <h4 class="reviews__title">Переваги</h4>
+                  <div class="reviews__text">Переваги у всьому</div>
+                </div>
+  
+                <div class="reviews__item">
+                  <h4 class="reviews__title">Недоліки</h4>
+                  <div class="reviews__text">Немає</div>
+                </div>
+  
+                <div class="reviews__date">04.07.2022</div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="user-reviews__question question" id="question">
+            <h2 class="question__title title">Питання</h2>
+  
+            <div class="question__items">
+              <div class="question__content">
+                <div class="question__row">
+                  <h3 class="question__fullname">Імя Прізвище</h3>
+                  <div class="question__date">12.06.2022</div>
+                </div>
+  
+                <div class="question__text">Я би хотів запитатись чи є додаткові характеристики до цього товару ?</div>
+  
+                <div class="question__answer answer-question">
+                  <button class="answer-question__button">1 відповідь</button>
+  
+                  <div class="answer-question__content">
+                    <h3 class="answer-question__title">Магазин Coper</h3>
+                    <div class="answer-question__text">так, звісно ! Відправимо Вам по пошті!</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="question__content">
+                <div class="question__row">
+                  <h3 class="question__fullname">Імя Прізвище</h3>
+                  <div class="question__date">12.06.2022</div>
+                </div>
+  
+                <div class="question__text">Я би хотів запитатись чи є додаткові характеристики до цього товару ?</div>
+  
+                <div class="question__answer answer-question">
+                  <button class="answer-question__button">1 відповідь</button>
+  
+                  <div class="answer-question__content">
+                    <h3 class="answer-question__title">Магазин Coper</h3>
+                    <div class="answer-question__text">так, звісно ! Відправимо Вам по пошті!</div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="question__content">
+                <div class="question__row">
+                  <h3 class="question__fullname">Імя Прізвище</h3>
+                  <div class="question__date">12.06.2022</div>
+                </div>
+  
+                <div class="question__text">Я би хотів запитатись чи є додаткові характеристики до цього товару ?</div>
+  
+                <div class="question__answer answer-question">
+                  <button class="answer-question__button">1 відповідь</button>
+  
+                  <div class="answer-question__content">
+                    <h3 class="answer-question__title">Магазин Coper</h3>
+                    <div class="answer-question__text">так, звісно ! Відправимо Вам по пошті!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="container products__container">
+        <h2 class="products__title">Рекомендовані товари</h2>
+        <div class="swiper popular-products">   
+          <div class="swiper-wrapper popular-products__wrapper">
+            <div class="swiper-slide popular-products__item">
+              <article class="product">
+                <div class="product__row">
+                  <div class="product__stiker product__stiker--orange">-10%</div>
+                  <button class="product__liked">
+                    <svg class="liked-svg" width="24" height="24" viewBox="0 0 20 18" fill="#848484" xmlns="http://www.w3.org/2000/svg">
+                      <path id="heart" d="M9.25271 16.952L10.4056 18L11.5584 16.952C13.3051 15.3799 14.7462 14.0262 15.8815 12.8908C17.0169 11.7555 17.9165 10.7465 18.5802 9.8641C19.244 8.98236 19.7069 8.17886 19.9689 7.45362C20.2309 6.72908 20.3619 5.99127 20.3619 5.24017C20.3619 3.75546 19.8595 2.51074 18.8548 1.50603C17.8508 0.502008 16.6064 0 15.1217 0C14.2134 0 13.3488 0.213799 12.5278 0.641397C11.7069 1.06969 10.9994 1.68559 10.4056 2.48908C9.81166 1.68559 9.10424 1.06969 8.28328 0.641397C7.46232 0.213799 6.59769 0 5.68939 0C4.20468 0 2.96031 0.502008 1.95629 1.50603C0.951577 2.51074 0.449219 3.75546 0.449219 5.24017C0.449219 5.99127 0.580223 6.72908 0.842232 7.45362C1.10424 8.17886 1.56712 8.98236 2.23088 9.8641C2.89463 10.7465 3.7942 11.7555 4.92957 12.8908C6.06494 14.0262 7.50599 15.3799 9.25271 16.952Z" fill=""/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product__image">
+                  <img src="./img/product/product.png" alt="">
+                </div>
+                <div class="product__props">
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                  <span class="product__testimonials">320 відгуків</span>
+                </div>
+                <h3 class="product__title">
+                  <a href="#">Моторна олія Aral BlueTronic 10W-40 1л</a>
+                </h3>
+                <div class="product__price product-price">
+                  <span class="product-price__current product-price__current--red">3 450 ₴</span>
+                  <span class="product-price__old">4 000 ₴</span>
+                </div>
+                <button class="product__btn button--buy">До кошика</button>
+              </article>
+            </div>
+
+            <div class="swiper-slide popular-products__item">
+              <article class="product">
+                <div class="product__row">
+                  <div class="product__stiker product__stiker--green">Новинка</div>
+                  <button class="product__liked">
+                    <svg class="liked-svg" width="24" height="24" viewBox="0 0 20 18" fill="#848484" xmlns="http://www.w3.org/2000/svg">
+                      <path id="heart" d="M9.25271 16.952L10.4056 18L11.5584 16.952C13.3051 15.3799 14.7462 14.0262 15.8815 12.8908C17.0169 11.7555 17.9165 10.7465 18.5802 9.8641C19.244 8.98236 19.7069 8.17886 19.9689 7.45362C20.2309 6.72908 20.3619 5.99127 20.3619 5.24017C20.3619 3.75546 19.8595 2.51074 18.8548 1.50603C17.8508 0.502008 16.6064 0 15.1217 0C14.2134 0 13.3488 0.213799 12.5278 0.641397C11.7069 1.06969 10.9994 1.68559 10.4056 2.48908C9.81166 1.68559 9.10424 1.06969 8.28328 0.641397C7.46232 0.213799 6.59769 0 5.68939 0C4.20468 0 2.96031 0.502008 1.95629 1.50603C0.951577 2.51074 0.449219 3.75546 0.449219 5.24017C0.449219 5.99127 0.580223 6.72908 0.842232 7.45362C1.10424 8.17886 1.56712 8.98236 2.23088 9.8641C2.89463 10.7465 3.7942 11.7555 4.92957 12.8908C6.06494 14.0262 7.50599 15.3799 9.25271 16.952Z" fill=""/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product__image">
+                  <img src="./img/product/product2.png" alt="">
+                </div>
+                <div class="product__props">
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating2.png" alt="">
+                  </span>
+                  <span class="product__testimonials">320 відгуків</span>
+                </div>
+                <h3 class="product__title">
+                  <a href="#">Моторна олія Aral BlueTronic 5W-20 1л</a>
+                </h3>
+                <div class="product__price product-price">
+                  <span class="product-price__current product-price__current--red">3 000 ₴</span>
+                </div>
+                <button class="product__btn button--buy">До кошика</button>
+              </article>
+            </div>
+
+            <div class="swiper-slide popular-products__item">
+              <article class="product">
+                <div class="product__row">
+                  <div class="product__stiker product__stiker--orange">-10%</div>
+                  <button class="product__liked">
+                    <svg class="liked-svg" width="24" height="24" viewBox="0 0 20 18" fill="#848484" xmlns="http://www.w3.org/2000/svg">
+                      <path id="heart" d="M9.25271 16.952L10.4056 18L11.5584 16.952C13.3051 15.3799 14.7462 14.0262 15.8815 12.8908C17.0169 11.7555 17.9165 10.7465 18.5802 9.8641C19.244 8.98236 19.7069 8.17886 19.9689 7.45362C20.2309 6.72908 20.3619 5.99127 20.3619 5.24017C20.3619 3.75546 19.8595 2.51074 18.8548 1.50603C17.8508 0.502008 16.6064 0 15.1217 0C14.2134 0 13.3488 0.213799 12.5278 0.641397C11.7069 1.06969 10.9994 1.68559 10.4056 2.48908C9.81166 1.68559 9.10424 1.06969 8.28328 0.641397C7.46232 0.213799 6.59769 0 5.68939 0C4.20468 0 2.96031 0.502008 1.95629 1.50603C0.951577 2.51074 0.449219 3.75546 0.449219 5.24017C0.449219 5.99127 0.580223 6.72908 0.842232 7.45362C1.10424 8.17886 1.56712 8.98236 2.23088 9.8641C2.89463 10.7465 3.7942 11.7555 4.92957 12.8908C6.06494 14.0262 7.50599 15.3799 9.25271 16.952Z" fill=""/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product__image">
+                  <img src="./img/product/product3.png" alt="">
+                </div>
+                <div class="product__props">
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                  <span class="product__testimonials">120 відгуків</span>
+                </div>
+                <h3 class="product__title">
+                  <a href="#">Моторна олія Aral BlueTronic 5W-40 1л</a>
+                </h3>
+                <div class="product__price product-price">
+                  <span class="product-price__current product-price__current--red">3 500 ₴</span>
+                  <span class="product-price__old">4 100 ₴</span>
+                </div>
+                <button class="product__btn button--buy">До кошика</button>
+              </article>
+            </div>
+
+            <div class="swiper-slide popular-products__item">
+              <article class="product">
+                <div class="product__row">
+                  <div class="product__stiker product__stiker--green">Новинка</div>
+                  <button class="product__liked">
+                    <svg class="liked-svg" width="24" height="24" viewBox="0 0 20 18" fill="#848484" xmlns="http://www.w3.org/2000/svg">
+                      <path id="heart" d="M9.25271 16.952L10.4056 18L11.5584 16.952C13.3051 15.3799 14.7462 14.0262 15.8815 12.8908C17.0169 11.7555 17.9165 10.7465 18.5802 9.8641C19.244 8.98236 19.7069 8.17886 19.9689 7.45362C20.2309 6.72908 20.3619 5.99127 20.3619 5.24017C20.3619 3.75546 19.8595 2.51074 18.8548 1.50603C17.8508 0.502008 16.6064 0 15.1217 0C14.2134 0 13.3488 0.213799 12.5278 0.641397C11.7069 1.06969 10.9994 1.68559 10.4056 2.48908C9.81166 1.68559 9.10424 1.06969 8.28328 0.641397C7.46232 0.213799 6.59769 0 5.68939 0C4.20468 0 2.96031 0.502008 1.95629 1.50603C0.951577 2.51074 0.449219 3.75546 0.449219 5.24017C0.449219 5.99127 0.580223 6.72908 0.842232 7.45362C1.10424 8.17886 1.56712 8.98236 2.23088 9.8641C2.89463 10.7465 3.7942 11.7555 4.92957 12.8908C6.06494 14.0262 7.50599 15.3799 9.25271 16.952Z" fill=""/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product__image">
+                  <img src="./img/product/product3.png" alt="">
+                </div>
+                <div class="product__props">
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                  <span class="product__testimonials">120 відгуків</span>
+                </div>
+                <h3 class="product__title">
+                  <a href="#">Моторна олія Aral BlueTronic 5W-40 1л</a>
+                </h3>
+                <div class="product__price product-price">
+                  <span class="product-price__current product-price__current--red">3 500 ₴</span>
+                </div>
+                <button class="product__btn button--buy">До кошика</button>
+              </article>
+            </div>
+            <div class="swiper-slide popular-products__item">
+              <article class="product">
+                <div class="product__row">
+                  <div class="product__stiker product__stiker--orange">Хіт</div>
+                  <button class="product__liked">
+                    <svg class="liked-svg" width="24" height="24" viewBox="0 0 20 18" fill="#848484" xmlns="http://www.w3.org/2000/svg">
+                      <path id="heart" d="M9.25271 16.952L10.4056 18L11.5584 16.952C13.3051 15.3799 14.7462 14.0262 15.8815 12.8908C17.0169 11.7555 17.9165 10.7465 18.5802 9.8641C19.244 8.98236 19.7069 8.17886 19.9689 7.45362C20.2309 6.72908 20.3619 5.99127 20.3619 5.24017C20.3619 3.75546 19.8595 2.51074 18.8548 1.50603C17.8508 0.502008 16.6064 0 15.1217 0C14.2134 0 13.3488 0.213799 12.5278 0.641397C11.7069 1.06969 10.9994 1.68559 10.4056 2.48908C9.81166 1.68559 9.10424 1.06969 8.28328 0.641397C7.46232 0.213799 6.59769 0 5.68939 0C4.20468 0 2.96031 0.502008 1.95629 1.50603C0.951577 2.51074 0.449219 3.75546 0.449219 5.24017C0.449219 5.99127 0.580223 6.72908 0.842232 7.45362C1.10424 8.17886 1.56712 8.98236 2.23088 9.8641C2.89463 10.7465 3.7942 11.7555 4.92957 12.8908C6.06494 14.0262 7.50599 15.3799 9.25271 16.952Z" fill=""/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="product__image">
+                  <img src="./img/product/product5.png" alt="">
+                </div>
+                <div class="product__props">
+                  <span class="product__rating">
+                    <img src="./img/liked/star_rating.png" alt="">
+                  </span>
+                  <span class="product__testimonials">20 відгуків</span>
+                </div>
+                <h3 class="product__title">
+                  <a href="#">Моторна олія Aral BlueTronic 10W-40 4л</a>
+                </h3>
+                <div class="product__price product-price">
+                  <span class="product-price__current product-price__current--red">3 500 ₴</span>
+                </div>
+                <button class="product__btn button--buy">До кошика</button>
+              </article>
+            </div>
+          </div>
+          <div class="popular-products__swiper-pagination swiper-pagination"></div>
+        </div>
+        <div class="popular-products__arrows">
+          <div class="popular-products__arrow swiper-button-prev"></div>
+          <div class="popular-products__arrow swiper-button-next"></div>
         </div>
       </div>
     </section>
@@ -846,4 +1182,5 @@
 <script src="./js/favorites.js"></script>
 <script src="./js/validation.js"></script>
 <script src="./js/time-count.js"></script>
+<script src="./js/scroll-section.js"></script>
 </html>

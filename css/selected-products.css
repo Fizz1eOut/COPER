@@ -1,5 +1,8 @@
+.selected-products {
+  padding-top: 140px;
+}
 .selected-products__title {
-  margin: 30px 0;
+  margin-bottom: 30px;
 }
 .title {
 }
@@ -11,4 +14,9 @@
   column-gap: 10px;
   row-gap: 20px;
   flex-wrap: wrap;
+}
+@media (max-width: 499px) {
+  .favorites-list {
+    justify-content: center;
+  }
 }

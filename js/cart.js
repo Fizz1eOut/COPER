@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const products = JSON.parse(productsRaw);
       return Array.isArray(products) ? products : [];
     } catch {
-      console.warn('error while getting favorites from LS');
+      console.warn('error while getting cart from LS');
       return [];
     }
   };
