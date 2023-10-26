@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <div class="card-product__row">
                     <div class="cart-product__text cart-product__text-mg">Кількість</div>
                     <div class="cart-product__wrapper">
-                          <div class="cart-product__current" data-counter>1</div>
+                          <div class="cart-product__current" data-counter>${data.count}</div>
                     </div>
                   </div>
 
@@ -63,6 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ordersProductsList.insertAdjacentHTML('afterbegin', generateOrderProduct(data));
   };
 
+  const updateProduct = (id, count) => {
+    const products = getProducts();
+    // console.log(products);
+    const index = products.findIndex((product) => product.id === id);
+    // console.log(index);
+    const obj = products[index];
+    obj.count = count;
+    // console.log(obj);
+    localStorage.setItem('cart', JSON.stringify(products));
+
+    // products.splice(index, 1, { ...products[index], count });
+    // localStorage.setItem('cart', JSON.stringify(products));
+  };
+
   const loadProducts = () => {
     const load = getProducts();
     load.forEach((el) => {
@@ -74,6 +88,42 @@ document.addEventListener('DOMContentLoaded', () => {
   loadProducts(getProducts());
 
   document.addEventListener('click', (e) => {
+    // Объявляем переменную для счетчика
+    let counter;
+    // Проверяем клик строго по кнопкам Плюс либо Минус
+    if (e.target.dataset.action === 'plus' || e.target.dataset.action === 'minus') {
+      // Находим обертку счетчика
+      const counterWrapper = e.target.closest('.cart-product__wrapper');
+      // Находим див с числом счетчика
+      counter = counterWrapper.querySelector('[data-counter]');
+      // console.log(counter);
+    }
+    // Проверяем является ли элемент по которому был совершен клик кнопкой Плюс
+    if (e.target.dataset.action === 'plus') {
+      counter.innerText = ++counter.innerText;
+      const { id } = counter.closest('.cart-product').dataset;
+      // console.log(id);
+      const count = +counter.textContent;
+      // console.log(count);
+      updatePrice();
+      updateProduct(id, count);
+    }
+
+    // Проверяем является ли элемент по которому был совершен клик кнопкой Минус
+    if (e.target.dataset.action === 'minus') {
+      // Проверяем чтобы счетчик был больше 1
+      if (parseInt(counter.innerText) > 1) {
+      // Изменяем текст в счетчике уменьшая его на 1
+        counter.innerText = --counter.innerText;
+        const { id } = counter.closest('.cart-product').dataset;
+        const count = counter.textContent;
+        updatePrice();
+        updateProduct(id, +count);
+      }
+    }
+  });
+
+  document.addEventListener('click', (e) => {
     if (e.target.classList.contains('cart-content__link')) {
       const parent = e.target.closest('.cart-product');
       const { id } = parent.dataset;
@@ -83,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title: parent.querySelector('.cart-product__title').textContent,
         img: parent.querySelector('.cart-product__img img').getAttribute('src'),
         price: parent.querySelector('.cart-product__price').textContent,
-        // counter: parent.querySelector('.cart-product__current').textContent,
+        count: 1,
       };
 
       console.log(addProduct(data));
