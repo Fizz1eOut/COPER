@@ -78,13 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const printQuantity = () => {
     const quantity = getFavorites();
     likedQuantity.textContent = quantity.length;
-
-    const favoriteEmpty = document.querySelector('.favorites-list__title');
-    if (likedQuantity.textContent > 0) {
-      favoriteEmpty.style.display = 'none';
-    } else {
-      favoriteEmpty.style.display = 'block';
-    }
   };
 
   const removeFavorite = (id) => {

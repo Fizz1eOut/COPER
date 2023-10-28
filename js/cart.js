@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return [];
     }
   };
-  console.log(getProducts());
+  getProducts();
 
   const updateLikeButtons = () => {
     const products = document.querySelectorAll('.product');
