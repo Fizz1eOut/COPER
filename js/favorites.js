@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isLiked) { // если уже лайкнуто (товар есть в списке избранного)\
         removeProduct(id); // удаляем товар, передавая его id
-
+        document.querySelector(`.product[data-id='${id}']`).querySelector('.product__liked').classList.remove('active');
         // обновляем кнопку лайка, по дефолту state будет false, поэтому передаем 1 параметр, но можно и явно - updateButton(button, false)
         // после этого завершаем работу с текущим элементом через return
         return updateButton(button);
